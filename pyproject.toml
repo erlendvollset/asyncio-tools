@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "asyncio-tools"
+version = "0.1.0"
+description = ""
+authors = ["erlendvollset <erlendvollset@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.2"
+pre-commit = "^2.10.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target_version = ['py37']
+include = '\.py$'
+
+[tool.isort]
+line_length=120                # corresponds to -w  flag
+multi_line_output=3            # corresponds to -m  flag
+include_trailing_comma=true    # corresponds to -tc flag
+skip_glob = '^((?!py$).)*$'    # isort all Python files
+float_to_top=true
+known_third_party = []
