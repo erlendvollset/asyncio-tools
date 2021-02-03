@@ -10,10 +10,10 @@ T = TypeVar("T")
 
 class EventLoopThreadExecutor(threading.Thread):
     def __init__(self, loop: Optional[asyncio.AbstractEventLoop] = None, daemon: bool = True) -> None:
-        super().__init__(target=self._target, name=self.__class__.__name__, daemon=daemon)
+        super().__init__(name=self.__class__.__name__, daemon=daemon)
         self._event_loop = loop or asyncio.new_event_loop()
 
-    def _target(self) -> None:
+    def run(self) -> None:
         asyncio.set_event_loop(self._event_loop)
         self._event_loop.run_forever()
 
