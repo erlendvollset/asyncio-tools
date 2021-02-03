@@ -17,7 +17,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 120
-target_version = ['py37']
 include = '\.py$'
 
 [tool.isort]

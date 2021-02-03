@@ -24,3 +24,10 @@ repos:
       - id: flake8
     repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        language: system
+        entry: pytest tests
+        pass_filenames: false
